@@ -124,15 +124,17 @@ func BinarySearch(haystack [][]int, needle int) ([]int, error) {
 	return nil, errors.New("No se encontro el alumno")
 }
 
-// Generamos la funcion para buscar por medio de binary search en una matriz (Se retorna una funcion para aprovechar la memoria local que ofrecen las closures lo que nos permite tener acceso al ultimo low y high cada vez que hagamos recursividad y asi evitamos tener que estarla pasando como parametro)
+// Generamos la funcion para buscar por medio de binary search en una matriz (Se retorna una funcion para aprovechar la memoria local que ofrecen las closures lo que nos permite tener acceso al ultimo low y high cada vez que hagamos recursividad y asi evitamos tener que estarla pasando como parametro) ademas que nos permite llevar un control de la cantidad de los espacios visitados ya en la matriz
 
 func generateBinarySearchFunction(haystack [][]int) func(int) ([]int, error) {
 	low := 0
 	high := len(haystack)
+	count := 0
 	var BSR func(int) ([]int, error)
 	BSR = func(needle int) ([]int, error) {
+		count++
 		mid := int(math.Floor(float64(low + (high-low)/2)))
-		if mid >= len(haystack) {
+		if mid >= len(haystack) || count > (len(haystack)*len(haystack[0])) {
 			return nil, errors.New("No se encontro el alumno")
 		}
 		value := haystack[mid][0]
