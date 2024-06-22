@@ -17,8 +17,12 @@ import (
 // Marcos Ignacio Camacho Gonzalez
 
 // Realizar un programa utilizando el paradigma imperativo, que permita ingresar 10 números enteros en un arreglo y 15 números enteros en otro arreglo.
+
 // Se debe revisar que los números estén ordenados en forma creciente, de no ser asi,
 // se deben ordenar. Mostrar los arreglos ordenados.
+// Ejemplo
+// arreglo [3,6,4,1]
+// resultado de esta instruccion [1,3,4,6]
 // Una vez que se están ordenados ambos arreglos, obtener un tercer arreglo ordenado en forma creciente intercalando los valores de los dos primeros arreglos.
 // Repetir tantas veces como el usuario desee hacerlo.
 
